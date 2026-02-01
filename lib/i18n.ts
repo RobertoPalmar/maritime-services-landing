@@ -423,6 +423,6 @@ export const translations = {
       copyright: "All rights reserved.",
     },
   },
-} as const
+}
 
 export type Translations = typeof translations.es
