@@ -38,10 +38,11 @@ export function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <TranslatedBlock className="text-center mb-16">
-          <p className="text-primary text-sm font-medium tracking-widest uppercase mb-4">
+          <p className="text-primary text-base font-semibold tracking-widest uppercase mb-4 flex items-center justify-center gap-2">
+            <Mail className="h-5 w-5" />
             {t.contact.tagline}
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground text-balance mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-foreground text-balance mb-6">
             {t.contact.title}
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
@@ -129,10 +130,11 @@ export function Contact() {
         {/* Header */}
         <FadeInSection>
           <TranslatedBlock className="text-center mb-16">
-            <p className="text-primary text-sm font-medium tracking-widest uppercase mb-4">
+            <p className="text-primary text-base font-semibold tracking-widest uppercase mb-4 flex items-center justify-center gap-2">
+              <Mail className="h-5 w-5" />
               {t.contact.tagline}
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground text-balance mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-foreground text-balance mb-6">
               {t.contact.title}
             </h2>
             <p className="max-w-2xl mx-auto text-muted-foreground text-lg">

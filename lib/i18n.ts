@@ -10,10 +10,10 @@ export const translations = {
       cta: "Solicitar Cotización",
     },
     hero: {
-      tagline: "Más de 9 años de experiencia",
+      tagline: "Más de una década de experiencia",
       title1: "World Maritime",
       title2: "Services",
-      description: "Expertos en aseo de embarcaciones y suministro de insumos para barcos y navíos. Su embarcación en las mejores manos.",
+      description: "Servicios de alta calidad en los principales puertos de Venezuela. Su barco en buenas manos.",
       cta: "Solicitar Cotización",
       ctaSecondary: "Nuestros Servicios",
       imageAlt: "Barco comercial en el océano",
@@ -33,9 +33,11 @@ export const translations = {
       title1: "Soluciones integrales para",
       title2: "la industria marítima",
       description: "Ofrecemos una gama completa de servicios diseñados para mantener su flota operando de manera eficiente y segura.",
+      qualityGuaranteed: "Calidad Garantizada",
       categories: [
         {
           title: "Provisiones y Suministros Generales",
+          imageLabel: "Abastecimiento Integral",
           items: [
             {
               title: "Alimentos y Bebidas",
@@ -53,6 +55,7 @@ export const translations = {
         },
         {
           title: "Suministros Técnicos y Consumibles",
+          imageLabel: "Soporte Técnico Especializado",
           items: [
             {
               title: "Ferretería y Cubierta",
@@ -70,6 +73,7 @@ export const translations = {
         },
         {
           title: "Servicios Portuarios Especializados",
+          imageLabel: "Gestión y Eficiencia Portuaria",
           items: [
             {
               title: "Mantenimiento y Seguridad",
@@ -113,7 +117,7 @@ export const translations = {
     about: {
       tagline: "Sobre Nosotros",
       title: "Comprometidos con la excelencia marítima",
-      description: "Desde hace más de dos décadas, World Maritime Services se ha consolidado como líder en servicios marítimos de alta calidad. Nuestra misión es proporcionar soluciones integrales que superen las expectativas de nuestros clientes, manteniendo los más altos estándares de calidad y seguridad.",
+      description: "Desde hace más de una década, World Maritime Services se ha consolidado como líder en servicios marítimos de alta calidad. Nuestra misión es proporcionar soluciones integrales que superen las expectativas de nuestros clientes, manteniendo los más altos estándares de calidad y seguridad.",
       features: [
         "Personal altamente capacitado y certificado",
         "Productos ecológicos y biodegradables",
@@ -123,7 +127,7 @@ export const translations = {
         "Garantía de satisfacción en cada servicio",
       ],
       stats: [
-        { value: "9+", label: "Años de experiencia" },
+        { value: "10+", label: "Años de experiencia" },
         { value: "500+", label: "Embarcaciones atendidas" },
         { value: "15", label: "Puertos de operación" },
         { value: "98%", label: "Clientes satisfechos" },
@@ -136,7 +140,7 @@ export const translations = {
       trustText: "Empresas que confían en nosotros",
       testimonials: [
         {
-          quote: "World Maritime Services ha sido nuestro socio de confianza durante más de 10 años. Su profesionalismo y calidad de servicio son incomparables.",
+          quote: "World Maritime Services ha sido nuestro socio de confianza durante más de una década. Su profesionalismo y calidad de servicio son incomparables.",
           author: "Carlos Mendoza",
           role: "Director de Operaciones",
           company: "Naviera del Pacífico",
@@ -190,7 +194,7 @@ export const translations = {
       },
     },
     footer: {
-      description: "Líderes en servicios marítimos con más de 9 años de experiencia. Su embarcación en las mejores manos.",
+      description: "Líderes en servicios marítimos con más de una década de experiencia. Su embarcación en las mejores manos.",
       servicesTitle: "Servicios",
       services: [
         { label: "Provisiones Generales", href: "#servicios" },
@@ -221,10 +225,10 @@ export const translations = {
       cta: "Get a Quote",
     },
     hero: {
-      tagline: "Over 9 years of experience",
+      tagline: "Over a decade of experience",
       title1: "World Maritime",
       title2: "Services",
-      description: "Experts in vessel cleaning and supply of provisions for ships and vessels. Your ship in the best hands.",
+      description: "High-quality services in Venezuela's main ports. Your Ship in good hands.",
       cta: "Get a Quote",
       ctaSecondary: "Our Services",
       imageAlt: "Commercial ship in the ocean",
@@ -244,9 +248,11 @@ export const translations = {
       title1: "Comprehensive solutions for",
       title2: "the maritime industry",
       description: "We offer a complete range of services designed to keep your fleet operating efficiently and safely.",
+      qualityGuaranteed: "Guaranteed Quality",
       categories: [
         {
           title: "Provisions & General Supplies",
+          imageLabel: "Integral Provisions",
           items: [
             {
               title: "Food & Beverages",
@@ -264,6 +270,7 @@ export const translations = {
         },
         {
           title: "Technical Supplies & Consumables",
+          imageLabel: "Specialized Technical Support",
           items: [
             {
               title: "Hardware & Deck",
@@ -281,6 +288,7 @@ export const translations = {
         },
         {
           title: "Specialized Port Services",
+          imageLabel: "Port Management & Efficiency",
           items: [
             {
               title: "Maintenance & Safety",
@@ -324,7 +332,7 @@ export const translations = {
     about: {
       tagline: "About Us",
       title: "Committed to maritime excellence",
-      description: "For over two decades, World Maritime Services has established itself as a leader in high-quality maritime services. Our mission is to provide comprehensive solutions that exceed our clients' expectations, maintaining the highest standards of quality and safety.",
+      description: "For over a decade, World Maritime Services has established itself as a leader in high-quality maritime services. Our mission is to provide comprehensive solutions that exceed our clients' expectations, maintaining the highest standards of quality and safety.",
       features: [
         "Highly trained and certified personnel",
         "Eco-friendly and biodegradable products",
@@ -334,7 +342,7 @@ export const translations = {
         "Satisfaction guarantee on every service",
       ],
       stats: [
-        { value: "9+", label: "Years of experience" },
+        { value: "10+", label: "Years of experience" },
         { value: "500+", label: "Vessels served" },
         { value: "15", label: "Operating ports" },
         { value: "98%", label: "Satisfied clients" },
@@ -347,7 +355,7 @@ export const translations = {
       trustText: "Companies that trust us",
       testimonials: [
         {
-          quote: "World Maritime Services has been our trusted partner for over 10 years. Their professionalism and quality of service are unmatched.",
+          quote: "World Maritime Services has been our trusted partner for over a decade. Their professionalism and quality of service are unmatched.",
           author: "Carlos Mendoza",
           role: "Operations Director",
           company: "Pacific Shipping",
@@ -401,7 +409,7 @@ export const translations = {
       },
     },
     footer: {
-      description: "Leaders in maritime services with over 9 years of experience. Your ship in the best hands.",
+      description: "Leaders in maritime services with over a decade of experience. Your ship in the best hands.",
       servicesTitle: "Services",
       services: [
         { label: "General Provisions", href: "#services" },

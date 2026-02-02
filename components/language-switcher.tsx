@@ -16,10 +16,10 @@ export function LanguageSwitcher() {
       variant="ghost"
       size="sm"
       onClick={toggleLocale}
-      className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
+      className="flex items-center gap-2 text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
     >
       <Globe className="h-4 w-4" />
-      <span className="text-sm font-medium uppercase">{locale === "es" ? "EN" : "ES"}</span>
+      <span className="text-sm font-medium uppercase">{locale === "es" ? "ES" : "EN"}</span>
     </Button>
   )
 }

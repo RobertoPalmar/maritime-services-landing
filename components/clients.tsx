@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Quote } from "lucide-react"
+import { Quote, UserCheck } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { useI18n } from "@/lib/i18n-context"
 import { TranslatedBlock } from "@/components/translated-text"
@@ -51,10 +51,11 @@ export function Clients() {
         {/* Header */}
         <FadeInSection>
           <TranslatedBlock className="text-center mb-16">
-            <p className="text-primary text-sm font-medium tracking-widest uppercase mb-4">
+            <p className="text-primary text-base font-semibold tracking-widest uppercase mb-4 flex items-center justify-center gap-2">
+              <UserCheck className="h-5 w-5" />
               {t.clients.tagline}
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground text-balance mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-foreground text-balance mb-6">
               {t.clients.title}
             </h2>
             <p className="max-w-2xl mx-auto text-muted-foreground text-lg">

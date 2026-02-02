@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Ship, Users, UserCheck, Mail, FileText, Anchor } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { useI18n } from "@/lib/i18n-context"
@@ -14,31 +14,31 @@ export function Header() {
   const { t, locale } = useI18n()
 
   const navLinks = [
-    { href: locale === "es" ? "#servicios" : "#services", label: t.nav.services },
-    { href: locale === "es" ? "#nosotros" : "#about", label: t.nav.about },
-    { href: locale === "es" ? "#clientes" : "#clients", label: t.nav.clients },
-    { href: locale === "es" ? "#contacto" : "#contact", label: t.nav.contact },
+    { href: locale === "es" ? "#servicios" : "#services", label: t.nav.services, icon: Ship },
+    { href: locale === "es" ? "#nosotros" : "#about", label: t.nav.about, icon: Users },
+    { href: locale === "es" ? "#clientes" : "#clients", label: t.nav.clients, icon: UserCheck },
+    { href: locale === "es" ? "#contacto" : "#contact", label: t.nav.contact, icon: Mail },
   ]
 
   const contactHref = locale === "es" ? "#contacto" : "#contact"
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo-header.svg"
+              src="/logo-header.svg"
               alt="World Maritime Services Logo"
               width={250}
               height={100}
               className="h-14 lg:h-14 w-auto object-contain"
               priority
             />
-            <div className="flex flex-col justify-center">
-              <span className="text-xl font-semibold text-foreground">World Maritime</span>
-              <span className="text-xl font-semibold text-foreground">Services</span>
+            <div className="flex flex-col">
+              <span className="text-xl text-blue-500 font-semibold text-foreground leading-none">World Maritime</span>
+              <span className="text-xl text-blue-500 font-normal text-foreground leading-none ">Services</span>
             </div>
           </Link>
 
@@ -48,8 +48,9 @@ export function Header() {
               <Link
                 key={index}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center gap-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors group"
               >
+                <link.icon className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />
                 <TranslatedText>{link.label}</TranslatedText>
               </Link>
             ))}
@@ -58,8 +59,9 @@ export function Header() {
           {/* CTA Button & Language Switcher */}
           <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher />
-            <Button asChild>
+            <Button asChild className="gap-2">
               <Link href={contactHref}>
+                <FileText className="h-6 w-6" />
                 <TranslatedText>{t.nav.cta}</TranslatedText>
               </Link>
             </Button>
@@ -87,14 +89,16 @@ export function Header() {
               <Link
                 key={index}
                 href={link.href}
-                className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center gap-3 text-base font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
+                <link.icon className="h-6 w-6 text-primary" />
                 <TranslatedText>{link.label}</TranslatedText>
               </Link>
             ))}
-            <Button asChild className="mt-2">
+            <Button asChild className="mt-2 gap-2">
               <Link href={contactHref}>
+                <FileText className="h-6 w-6" />
                 <TranslatedText>{t.nav.cta}</TranslatedText>
               </Link>
             </Button>

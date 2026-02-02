@@ -1,16 +1,18 @@
 "use client"
 
-import { 
-  UtensilsCrossed, 
-  Bed, 
-  Droplets, 
-  Wrench, 
-  Cog, 
-  Truck, 
-  Sparkles, 
-  Trash2, 
-  Headphones 
+import {
+  UtensilsCrossed,
+  Bed,
+  Droplets,
+  Wrench,
+  Cog,
+  Truck,
+  Sparkles,
+  Trash2,
+  Headphones,
+  Ship
 } from "lucide-react"
+import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useI18n } from "@/lib/i18n-context"
 import { TranslatedBlock } from "@/components/translated-text"
@@ -33,15 +35,16 @@ export function Services() {
   const sectionId = locale === "es" ? "servicios" : "services"
 
   return (
-    <section id={sectionId} className="py-24 lg:py-32 bg-background">
+    <section id={sectionId} className="py-16 lg:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <FadeInSection>
-          <TranslatedBlock className="text-center mb-16">
-            <p className="text-primary text-sm font-medium tracking-widest uppercase mb-4">
+          <TranslatedBlock className="text-center mb-12">
+            <p className="text-primary text-base font-semibold tracking-widest uppercase mb-4 flex items-center justify-center gap-2">
+              <Ship className="h-5 w-5" />
               {t.services.tagline}
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground text-balance mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-foreground text-balance mb-6">
               {t.services.title1}
               <br />
               {t.services.title2}
@@ -52,36 +55,80 @@ export function Services() {
           </TranslatedBlock>
         </FadeInSection>
 
-        {/* Service Categories */}
-        <TranslatedBlock className="space-y-12">
-          {t.services.categories.map((category, catIndex) => (
-            <FadeInSection key={catIndex} delay={catIndex * 150}>
-              <h3 className="text-xl lg:text-2xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <span className={`w-2 h-8 rounded-full ${catIndex === 0 ? 'bg-blue-500' : catIndex === 1 ? 'bg-amber-500' : 'bg-emerald-500'}`} />
-                {category.title}
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.items.map((item, itemIndex) => {
-                  const IconComponent = categoryIcons[catIndex][itemIndex]
-                  return (
-                    <Card key={itemIndex} className="group hover:shadow-lg transition-all duration-300 border-border hover:border-primary/30">
-                      <CardContent className="p-6">
-                        <div className={`w-12 h-12 rounded-lg ${categoryColors[catIndex]} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                          <IconComponent className="h-6 w-6" />
-                        </div>
-                        <h4 className="text-lg font-semibold text-foreground mb-2">
-                          {item.title}
-                        </h4>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          {item.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  )
-                })}
+        {/* Alternating Service Blocks */}
+        <TranslatedBlock className="space-y-16 lg:space-y-20">
+          {t.services.categories.map((category, catIndex) => {
+            const isImageRight = catIndex % 2 === 0
+            const accentColor = catIndex === 0 ? 'text-blue-500' : catIndex === 1 ? 'text-amber-500' : 'text-emerald-500'
+            const bgAccent = catIndex === 0 ? 'bg-blue-500/10' : catIndex === 1 ? 'bg-amber-500/10' : 'bg-emerald-500/10'
+            const shipImage = catIndex === 0 ? "/services/service-supplies-4.jpg" : catIndex === 1 ? "/services/service-supplies-2.jpg" : "/services/service-supplies-5.jpg"
+
+            return (
+              <div key={catIndex} className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+                {/* Content Column */}
+                <FadeInSection
+                  className={`lg:col-span-6 ${!isImageRight ? "lg:order-2" : ""}`}
+                  direction={isImageRight ? "left" : "right"}
+                >
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-4">
+                      <div className={`w-14 h-14 rounded-2xl ${bgAccent} flex items-center justify-center`}>
+                        <Ship className={`h-7 w-7 ${accentColor}`} />
+                      </div>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
+                        {category.title}
+                      </h3>
+                    </div>
+
+                    <div className="grid gap-6">
+                      {category.items.map((item, itemIndex) => {
+                        const IconItem = categoryIcons[catIndex][itemIndex]
+                        return (
+                          <Card key={itemIndex} className="border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-md transition-shadow">
+                            <CardContent className="p-3.5 flex gap-4">
+                              <div className={`flex-shrink-0 w-10 h-10 rounded-lg ${bgAccent} flex items-center justify-center`}>
+                                <IconItem className={`h-5 w-5 ${accentColor}`} />
+                              </div>
+                              <div>
+                                <h4 className="text-lg font-semibold text-foreground mb-1">{item.title}</h4>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        )
+                      })}
+                    </div>
+                  </div>
+                </FadeInSection>
+
+                {/* Image Column */}
+                <FadeInSection
+                  className={`lg:col-span-6 h-full ${!isImageRight ? "lg:order-1" : ""}`}
+                  direction={isImageRight ? "right" : "left"}
+                >
+                  <div className="relative h-full aspect-video lg:aspect-auto rounded-3xl overflow-hidden shadow-2xl group min-h-[300px]">
+                    <Image
+                      src={shipImage}
+                      alt={category.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/20 to-transparent" />
+
+                    {/* Decorative Elements */}
+                    <div className="absolute top-6 left-6">
+                      <div className="px-4 py-2 rounded-full bg-background/90 backdrop-blur-md text-foreground text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                        <span className={`w-2 h-2 rounded-full ${catIndex === 0 ? 'bg-blue-500' : catIndex === 1 ? 'bg-amber-500' : 'bg-emerald-500'} animate-pulse`} />
+                        {(category as any).imageLabel}
+                      </div>
+                    </div>
+                  </div>
+                </FadeInSection>
               </div>
-            </FadeInSection>
-          ))}
+            )
+          })}
         </TranslatedBlock>
       </div>
     </section>

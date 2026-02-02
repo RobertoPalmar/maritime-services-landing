@@ -1,6 +1,6 @@
 "use client"
 
-import { Check } from "lucide-react"
+import { Check, Users } from "lucide-react"
 import { useI18n } from "@/lib/i18n-context"
 import { TranslatedBlock } from "@/components/translated-text"
 import { FadeInSection } from "@/components/fade-in-section"
@@ -16,16 +16,17 @@ export function About() {
           {/* Content */}
           <FadeInSection direction="left">
             <TranslatedBlock>
-              <p className="text-primary text-sm font-medium tracking-widest uppercase mb-4">
+              <p className="text-primary text-base font-semibold tracking-widest uppercase mb-4 flex items-center gap-2">
+                <Users className="h-5 w-5" />
                 {t.about.tagline}
               </p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground text-balance mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-foreground text-balance mb-6">
                 {t.about.title}
               </h2>
               <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
                 {t.about.description}
               </p>
-              
+
               <ul className="grid sm:grid-cols-2 gap-4">
                 {t.about.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
@@ -44,7 +45,7 @@ export function About() {
             <TranslatedBlock className="grid grid-cols-2 gap-6">
               {t.about.stats.map((stat, index) => (
                 <div key={index} className="bg-card rounded-2xl p-8 text-center shadow-sm border border-border">
-                  <div className="text-4xl lg:text-5xl font-serif font-bold text-primary mb-2">
+                  <div className="text-4xl lg:text-5xl font-sans font-bold text-primary mb-2">
                     {stat.value}
                   </div>
                   <div className="text-muted-foreground text-sm">{stat.label}</div>

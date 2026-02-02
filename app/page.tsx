@@ -3,7 +3,6 @@
 import { I18nProvider } from "@/lib/i18n-context"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
-import { ImageCarousel } from "@/components/image-carousel"
 import { Services } from "@/components/services"
 import { WhyUs } from "@/components/why-us"
 import { About } from "@/components/about"
@@ -17,7 +16,6 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <ImageCarousel />
         <Services />
         <WhyUs />
         <About />

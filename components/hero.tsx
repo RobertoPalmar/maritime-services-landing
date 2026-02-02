@@ -1,30 +1,54 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Anchor } from "lucide-react"
 import { useI18n } from "@/lib/i18n-context"
 import { TranslatedBlock } from "@/components/translated-text"
 import { FadeInSection } from "@/components/fade-in-section"
 
+const heroImages = [
+  "/images/hero-ship-1.jpg",
+  "/images/hero-ship-2.jpg",
+  "/images/hero-ship-5.jpg",
+]
+
 export function Hero() {
   const { t, locale } = useI18n()
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const contactHref = locale === "es" ? "#contacto" : "#contact"
   const servicesHref = locale === "es" ? "#servicios" : "#services"
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image Slider */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero-ship.jpg"
-          alt={t.hero.imageAlt}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-foreground/60" />
+        {heroImages.map((src, index) => (
+          <div
+            key={src}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? "opacity-100" : "opacity-0"
+              }`}
+          >
+            <Image
+              src={src}
+              alt={t.hero.imageAlt}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+          </div>
+        ))}
+        {/* Dark Overlay for better text readability */}
+        <div className="absolute inset-0 bg-foreground/60 z-10" />
       </div>
 
       {/* Content */}
@@ -34,7 +58,7 @@ export function Hero() {
             <p className="text-primary-foreground/80 text-sm font-medium tracking-widest uppercase mb-6">
               {t.hero.tagline}
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold text-primary-foreground leading-tight text-balance mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-sans font-bold text-primary-foreground leading-tight text-balance mb-6">
               {t.hero.title1}
               <br />
               {t.hero.title2}
@@ -62,10 +86,8 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <div className="w-6 h-10 border-2 border-primary-foreground/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary-foreground/50 rounded-full mt-2 animate-bounce" />
-        </div>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+        <Anchor className="h-8 w-8 text-primary-foreground/70 animate-bounce" />
       </div>
     </section>
   )
