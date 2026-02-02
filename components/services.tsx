@@ -61,7 +61,7 @@ export function Services() {
             const isImageRight = catIndex % 2 === 0
             const accentColor = catIndex === 0 ? 'text-blue-500' : catIndex === 1 ? 'text-amber-500' : 'text-emerald-500'
             const bgAccent = catIndex === 0 ? 'bg-blue-500/10' : catIndex === 1 ? 'bg-amber-500/10' : 'bg-emerald-500/10'
-            const shipImage = catIndex === 0 ? "/services/service-supplies-4.jpg" : catIndex === 1 ? "/services/service-supplies-2.jpg" : "/services/service-supplies-5.jpg"
+            const shipImage = catIndex === 0 ? "/services/service-supplies-4.jpg" : catIndex === 1 ? "/services/service-supplies-6.jpg" : "/services/service-supplies-5.jpg"
 
             return (
               <div key={catIndex} className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
