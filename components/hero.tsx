@@ -10,9 +10,9 @@ import { TranslatedBlock } from "@/components/translated-text"
 import { FadeInSection } from "@/components/fade-in-section"
 
 const heroImages = [
-  "/images/hero-ship-1.jpg",
-  "/images/hero-ship-2.jpg",
-  "/images/hero-ship-5.jpg",
+  "/hero/hero-ship-1.jpg",
+  "/hero/hero-ship-2.jpg",
+  "/hero/hero-ship-5.jpg",
 ]
 
 export function Hero() {
