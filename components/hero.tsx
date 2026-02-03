@@ -71,12 +71,12 @@ export function Hero() {
         <FadeInSection delay={200}>
           <TranslatedBlock>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" asChild className="text-base px-8">
+              {/* <Button size="lg" asChild className="text-base px-8">
                 <Link href={contactHref}>
                   {t.hero.cta}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-              </Button>
+              </Button> */}
               <Button size="lg" variant="outline" asChild className="text-base px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-foreground bg-transparent">
                 <Link href={servicesHref}>{t.hero.ctaSecondary}</Link>
               </Button>

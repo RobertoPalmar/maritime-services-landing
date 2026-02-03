@@ -80,17 +80,6 @@ export function Footer() {
           <p className="text-primary-foreground/60 text-sm">
             © {new Date().getFullYear()} World Maritime Services. {t.footer.copyright}
           </p>
-          <div className="flex items-center gap-6">
-            <Link href="#" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
-              LinkedIn
-            </Link>
-            <Link href="#" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
-              Instagram
-            </Link>
-            <Link href="#" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
-              Facebook
-            </Link>
-          </div>
         </TranslatedBlock>
       </div>
     </footer>

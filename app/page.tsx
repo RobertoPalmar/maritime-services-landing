@@ -6,6 +6,7 @@ import { Hero } from "@/components/hero"
 import { Services } from "@/components/services"
 import { WhyUs } from "@/components/why-us"
 import { About } from "@/components/about"
+import { StatsBanner } from "@/components/stats-banner"
 import { Clients } from "@/components/clients"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
@@ -17,8 +18,9 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        {/* <WhyUs /> */}
         <About />
+        <StatsBanner />
+        <WhyUs />
         <Clients />
         <Contact />
       </main>

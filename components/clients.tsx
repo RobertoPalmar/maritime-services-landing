@@ -11,18 +11,18 @@ import AutoScroll from "embla-carousel-auto-scroll"
 import Image from "next/image"
 
 const clients = [
-  { name: "SCF Group", logo: "/clients/SCF.svg" },
+  { name: "SCF Group", logo: "/clients/SCF GROUP.png" },
   { name: "NYNAS AB", logo: "/clients/Nynas AB.png" },
   { name: "Nordic American Tankers", logo: "/clients/Nordic American Tankers.svg" },
-  { name: "SFL Corporation Ltd.", logo: "/clients/SFL.svg" },
-  { name: "The Great Eastern Shipping Co.", logo: "/clients/Great Eastern.png" },
+  { name: "SFL Corporation Ltd.", logo: "/clients/SFL Corporation Ltd.png" },
+  { name: "The Great Eastern Shipping Co.", logo: "/clients/The Great Eastern Shipping Co.png" },
   { name: "Minerva Marine Inc", logo: "/clients/Minerva Marine.png" },
   { name: "Hellenic Tankers Ltd", logo: "/clients/Hellenic Tankers Ltd.jpg" },
   { name: "Teekay Shipping Corp.", logo: "/clients/Teekay.png" },
-  { name: "Maran Tankers", logo: "/clients/Maran Tankers.png" },
-  { name: "Euronav Ship Management", logo: "/clients/Euronav.webp" },
+  { name: "Maran Tankers", logo: "/clients/Maran Tanker.png" },
+  { name: "Euronav Ship Management", logo: "/clients/EuroNav.png" },
   { name: "Swiss Carriers SA", logo: "/clients/Swiss Carriers.png" },
-  { name: "Wah Kwong Maritime", logo: "/clients/Wah Kwong.svg" },
+  { name: "Wah Kwong Maritime", logo: "/clients/Wah Kwong Maritime.jpg" },
   { name: "OSMThome Tankers", logo: "/clients/OSMThome Tankers.jpg" },
 ]
 
@@ -66,34 +66,9 @@ export function Clients() {
           </TranslatedBlock>
         </FadeInSection>
 
-        {/* Testimonials */}
-        <TranslatedBlock className="grid md:grid-cols-3 gap-6 mb-20">
-          {t.clients.testimonials.map((testimonial, index) => (
-            <FadeInSection key={index} delay={index * 100}>
-              <Card className="border-border h-full">
-                <CardContent className="p-6">
-                  <Quote className="h-8 w-8 text-primary/30 mb-4" />
-                  <p className="text-foreground mb-6 leading-relaxed">
-                    {'"'}{testimonial.quote}{'"'}
-                  </p>
-                  <div>
-                    <p className="font-semibold text-foreground">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                    <p className="text-sm text-primary">{testimonial.company}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </FadeInSection>
-          ))}
-        </TranslatedBlock>
-
         {/* Client Logos Marquee */}
         <FadeInSection delay={300}>
-          <div className="border-t border-border pt-16">
-            <p className="text-center text-muted-foreground text-sm mb-12 uppercase tracking-widest font-medium">
-              {t.clients.trustText}
-            </p>
-
+          <div>
             <div className="relative">
               <div ref={emblaRef} className="overflow-hidden cursor-grab active:cursor-grabbing">
                 <div className="flex">

@@ -97,10 +97,6 @@ export const translations = {
       description: "Nos diferenciamos por nuestra dedicación a la excelencia y nuestro profundo conocimiento del sector marítimo.",
       features: [
         {
-          title: "Especialistas en Port Hedland",
-          description: "Conocimiento profundo de las dinámicas locales y requisitos portuarios.",
-        },
-        {
           title: "Soluciones a Medida",
           description: "No creemos en soluciones genéricas. Adaptamos nuestro servicio a los requerimientos específicos de cada buque.",
         },
@@ -120,42 +116,20 @@ export const translations = {
       description: "Desde hace más de una década, World Maritime Services se ha consolidado como líder en servicios marítimos de alta calidad. Nuestra misión es proporcionar soluciones integrales que superen las expectativas de nuestros clientes, manteniendo los más altos estándares de calidad y seguridad.",
       features: [
         "Personal altamente capacitado y certificado",
-        "Productos ecológicos y biodegradables",
-        "Cobertura en los principales puertos",
+        "Cobertura en los principales puertos del país",
         "Precios competitivos y transparentes",
         "Respuesta inmediata a solicitudes urgentes",
         "Garantía de satisfacción en cada servicio",
       ],
       stats: [
         { value: "10+", label: "Años de experiencia" },
-        { value: "50+", label: "Embarcaciones atendidas" },
+        { value: "+50", label: "Embarcaciones atendidas" },
       ],
     },
     clients: {
-      tagline: "Testimonios",
-      title: "Lo que dicen nuestros clientes",
-      description: "La satisfacción de nuestros clientes es nuestra mayor recompensa y motivación para seguir mejorando cada día.",
-      trustText: "Empresas que confían en nosotros",
-      testimonials: [
-        {
-          quote: "World Maritime Services ha sido nuestro socio de confianza durante más de una década. Su profesionalismo y calidad de servicio son incomparables.",
-          author: "Carlos Mendoza",
-          role: "Director de Operaciones",
-          company: "Naviera del Pacífico",
-        },
-        {
-          quote: "La rapidez de respuesta y la calidad de los insumos que proporcionan nos han permitido optimizar nuestras escalas portuarias significativamente.",
-          author: "María Fernández",
-          role: "Capitán",
-          company: "Flota Mercante Internacional",
-        },
-        {
-          quote: "Excelente servicio de aseo. Nuestras embarcaciones siempre quedan impecables y listas para zarpar. Altamente recomendados.",
-          author: "Roberto Sánchez",
-          role: "Gerente de Flota",
-          company: "Transportes Marítimos SA",
-        },
-      ],
+      tagline: "Clientes",
+      title: "Empresas que confían en nuestra excelencia",
+      description: "Hemos gestionado con éxito los suministros y la logística para algunas de las flotas más exigentes del sector. Nuestra reputación se construye sobre la fiabilidad en cada escala",
     },
     contact: {
       tagline: "Contacto",
@@ -310,10 +284,6 @@ export const translations = {
       description: "We stand out for our dedication to excellence and our deep knowledge of the maritime sector.",
       features: [
         {
-          title: "Port Hedland Specialists",
-          description: "Deep understanding of local dynamics and port requirements.",
-        },
-        {
           title: "Tailored Solutions",
           description: "We don't believe in generic solutions. We adapt our service to the specific requirements of each vessel.",
         },
@@ -333,42 +303,20 @@ export const translations = {
       description: "For over a decade, World Maritime Services has established itself as a leader in high-quality maritime services. Our mission is to provide comprehensive solutions that exceed our clients' expectations, maintaining the highest standards of quality and safety.",
       features: [
         "Highly trained and certified personnel",
-        "Eco-friendly and biodegradable products",
-        "Coverage in major ports",
+        "Coverage in the main ports of the country",
         "Competitive and transparent pricing",
         "Immediate response to urgent requests",
         "Satisfaction guarantee on every service",
       ],
       stats: [
         { value: "10+", label: "Years of experience" },
-        { value: "50+", label: "Vessels served" },
+        { value: "+50", label: "Vessels served" },
       ],
     },
     clients: {
-      tagline: "Testimonials",
-      title: "What our clients say",
-      description: "Our clients' satisfaction is our greatest reward and motivation to keep improving every day.",
-      trustText: "Companies that trust us",
-      testimonials: [
-        {
-          quote: "World Maritime Services has been our trusted partner for over a decade. Their professionalism and quality of service are unmatched.",
-          author: "Carlos Mendoza",
-          role: "Operations Director",
-          company: "Pacific Shipping",
-        },
-        {
-          quote: "The quick response and quality of supplies they provide have allowed us to significantly optimize our port calls.",
-          author: "María Fernández",
-          role: "Captain",
-          company: "International Merchant Fleet",
-        },
-        {
-          quote: "Excellent cleaning service. Our vessels are always spotless and ready to sail. Highly recommended.",
-          author: "Roberto Sánchez",
-          role: "Fleet Manager",
-          company: "Maritime Transport SA",
-        },
-      ],
+      tagline: "Clients",
+      title: "Companies that trust in our excellence",
+      description: "We have successfully managed supplies and logistics for some of the most demanding fleets in the industry. Our reputation is built on reliability at every port of call.",
     },
     contact: {
       tagline: "Contact",
