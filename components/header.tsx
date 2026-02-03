@@ -36,9 +36,9 @@ export function Header() {
               className="h-10 lg:h-14 w-auto object-contain"
               priority
             />
-            <div className="hidden md:flex flex-col">
-              <span className="text-xl text-blue-500 font-semibold text-foreground leading-none">World Maritime</span>
-              <span className="text-xl text-blue-500 font-normal text-foreground leading-none ">Services</span>
+            <div className="flex flex-col">
+              <span className="text-sm md:text-xl text-blue-500 font-semibold text-foreground leading-none">World Maritime</span>
+              <span className="text-sm md:text-xl text-blue-500 font-normal text-foreground leading-none ">Services</span>
             </div>
           </Link>
 

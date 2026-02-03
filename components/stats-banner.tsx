@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import { useEffect, useState, useMemo } from "react"
 import { useI18n } from "@/lib/i18n-context"
 import { TranslatedBlock } from "@/components/translated-text"
@@ -12,19 +11,7 @@ export function StatsBanner() {
     const stats = t.about.stats
 
     return (
-        <section className="relative h-48 sm:h-45 flex items-center justify-center overflow-hidden">
-            {/* Background Image Overlay */}
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src="/hero/hero-ship-2.jpg"
-                    alt="Technical operation background"
-                    fill
-                    className="object-cover"
-                />
-                <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-transparent to-primary/20" />
-            </div>
-
+        <section className="relative py-12 bg-primary shadow-2xl">
             <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <FadeInSection direction="up">
                     <div className="grid grid-cols-2 gap-8 md:gap-16 justify-center items-center max-w-4xl mx-auto">

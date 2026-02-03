@@ -36,7 +36,7 @@ export function WhyUs() {
             return (
               <FadeInSection key={index} delay={index * 100}>
                 <Card className="bg-card border-border shadow-sm h-full hover:shadow-md transition-shadow">
-                  <CardContent className="p-6 text-center">
+                  <CardContent className="py-3 px-4 text-center">
                     <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="h-7 w-7 text-primary" />
                     </div>
