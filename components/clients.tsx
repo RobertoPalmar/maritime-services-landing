@@ -8,20 +8,22 @@ import { TranslatedBlock } from "@/components/translated-text"
 import { FadeInSection } from "@/components/fade-in-section"
 import useEmblaCarousel from "embla-carousel-react"
 import AutoScroll from "embla-carousel-auto-scroll"
+import Image from "next/image"
 
 const clients = [
-  "SCF Group",
-  "NYNAS AB",
-  "Nordic American Tankers",
-  "SFL Corporation Ltd.",
-  "The Great Eastern Shipping Company Limited",
-  "Minerva Marine Inc",
-  "Hellenic Tankers Ltd",
-  "Teekay Shipping Corporation",
-  "Maran Tankers Management Inc",
-  "Euronav Ship Management (HELLAS) Ltd",
-  "Swiss Carriers SA",
-  "Wah Kwong Maritime Transport Holdings Limited",
+  { name: "SCF Group", logo: "/clients/SCF.svg" },
+  { name: "NYNAS AB", logo: "/clients/Nynas AB.png" },
+  { name: "Nordic American Tankers", logo: "/clients/Nordic American Tankers.svg" },
+  { name: "SFL Corporation Ltd.", logo: "/clients/SFL.svg" },
+  { name: "The Great Eastern Shipping Co.", logo: "/clients/Great Eastern.png" },
+  { name: "Minerva Marine Inc", logo: "/clients/Minerva Marine.png" },
+  { name: "Hellenic Tankers Ltd", logo: "/clients/Hellenic Tankers Ltd.jpg" },
+  { name: "Teekay Shipping Corp.", logo: "/clients/Teekay.png" },
+  { name: "Maran Tankers", logo: "/clients/Maran Tankers.png" },
+  { name: "Euronav Ship Management", logo: "/clients/Euronav.webp" },
+  { name: "Swiss Carriers SA", logo: "/clients/Swiss Carriers.png" },
+  { name: "Wah Kwong Maritime", logo: "/clients/Wah Kwong.svg" },
+  { name: "OSMThome Tankers", logo: "/clients/OSMThome Tankers.jpg" },
 ]
 
 export function Clients() {
@@ -97,12 +99,20 @@ export function Clients() {
                 <div className="flex">
                   {clients.map((client, index) => (
                     <div
-                      key={`${client}-${index}`}
+                      key={`${client.name}-${index}`}
                       className="flex-[0_0_auto] min-w-0"
                     >
-                      <div className="flex items-center justify-center h-20 px-8 mx-4 bg-secondary/50 backdrop-blur-sm border border-border/50 rounded-xl transition-all duration-300 hover:bg-secondary hover:border-primary/20 hover:shadow-lg">
-                        <span className="text-foreground text-base tracking-tight whitespace-nowrap select-none">
-                          {client}
+                      <div className="flex flex-col items-center justify-center gap-3 h-36 px-8 mx-4 bg-secondary/30 backdrop-blur-sm border border-border/50 rounded-xl transition-all duration-300 hover:bg-secondary/50 hover:border-primary/20 hover:shadow-lg group">
+                        <div className="relative w-16 h-16 flex-shrink-0">
+                          <Image
+                            src={client.logo}
+                            alt={client.name}
+                            fill
+                            className="object-contain grayscale contrast-125 opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                          />
+                        </div>
+                        <span className="text-muted-foreground group-hover:text-foreground text-xs font-semibold tracking-tight whitespace-nowrap select-none transition-colors text-center max-w-[150px] truncate">
+                          {client.name}
                         </span>
                       </div>
                     </div>

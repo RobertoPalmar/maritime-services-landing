@@ -35,11 +35,11 @@ export function Services() {
   const sectionId = locale === "es" ? "servicios" : "services"
 
   return (
-    <section id={sectionId} className="py-16 lg:py-24 bg-background">
+    <section id={sectionId} className="py-24 lg:py-32 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <FadeInSection>
-          <TranslatedBlock className="text-center mb-12">
+          <TranslatedBlock className="text-center mb-8">
             <p className="text-primary text-base font-semibold tracking-widest uppercase mb-4 flex items-center justify-center gap-2">
               <Ship className="h-5 w-5" />
               {t.services.tagline}
@@ -56,7 +56,7 @@ export function Services() {
         </FadeInSection>
 
         {/* Alternating Service Blocks */}
-        <TranslatedBlock className="space-y-16 lg:space-y-20">
+        <TranslatedBlock className="space-y-12 lg:space-y-16">
           {t.services.categories.map((category, catIndex) => {
             const isImageRight = catIndex % 2 === 0
             const accentColor = catIndex === 0 ? 'text-blue-500' : catIndex === 1 ? 'text-amber-500' : 'text-emerald-500'
@@ -64,13 +64,13 @@ export function Services() {
             const shipImage = catIndex === 0 ? "/services/service-supplies-4.jpg" : catIndex === 1 ? "/services/service-supplies-6.jpg" : "/services/service-supplies-5.jpg"
 
             return (
-              <div key={catIndex} className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+              <div key={catIndex} className="grid lg:grid-cols-12 gap-6 lg:gap-12 items-center py-4">
                 {/* Content Column */}
                 <FadeInSection
                   className={`lg:col-span-6 ${!isImageRight ? "lg:order-2" : ""}`}
                   direction={isImageRight ? "left" : "right"}
                 >
-                  <div className="space-y-6">
+                  <div className="space-y-4">
                     <div className="flex items-center gap-4">
                       <div className={`w-14 h-14 rounded-2xl ${bgAccent} flex items-center justify-center`}>
                         <Ship className={`h-7 w-7 ${accentColor}`} />
@@ -80,12 +80,12 @@ export function Services() {
                       </h3>
                     </div>
 
-                    <div className="grid gap-6">
+                    <div className="grid gap-4">
                       {category.items.map((item, itemIndex) => {
                         const IconItem = categoryIcons[catIndex][itemIndex]
                         return (
                           <Card key={itemIndex} className="border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-md transition-shadow">
-                            <CardContent className="p-3.5 flex gap-4">
+                            <CardContent className="px-3.5 flex gap-4">
                               <div className={`flex-shrink-0 w-10 h-10 rounded-lg ${bgAccent} flex items-center justify-center`}>
                                 <IconItem className={`h-5 w-5 ${accentColor}`} />
                               </div>
@@ -108,7 +108,7 @@ export function Services() {
                   className={`lg:col-span-6 h-full ${!isImageRight ? "lg:order-1" : ""}`}
                   direction={isImageRight ? "right" : "left"}
                 >
-                  <div className="relative h-full aspect-video lg:aspect-auto rounded-3xl overflow-hidden shadow-2xl group min-h-[300px]">
+                  <div className="relative h-full aspect-video lg:aspect-auto rounded-3xl overflow-hidden shadow-2xl group lg:min-h-[300px]">
                     <Image
                       src={shipImage}
                       alt={category.title}

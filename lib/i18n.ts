@@ -128,9 +128,7 @@ export const translations = {
       ],
       stats: [
         { value: "10+", label: "Años de experiencia" },
-        { value: "500+", label: "Embarcaciones atendidas" },
-        { value: "15", label: "Puertos de operación" },
-        { value: "98%", label: "Clientes satisfechos" },
+        { value: "50+", label: "Embarcaciones atendidas" },
       ],
     },
     clients: {
@@ -161,11 +159,11 @@ export const translations = {
     },
     contact: {
       tagline: "Contacto",
-      title: "Hablemos de su proyecto",
-      description: "Estamos listos para atender sus necesidades. Contáctenos para una cotización personalizada sin compromiso.",
+      title: "Coordinemos su próxima escala en puerto venezolano",
+      description: "Estamos listos para gestionar el aprovisionamiento integral de su buque. Envíenos sus requerimientos de suministros y garantice una operación eficiente y sin retrasos.",
       info: {
         address: { title: "Dirección", content: "Puerto Principal, Av. Marítima 1234" },
-        phone: { title: "Teléfono", content: "+1 (555) 123-4567" },
+        phone: { title: "Teléfono", content: "+58 424-6258080 / +58 414-6447791" },
         email: { title: "Email", content: "info@worldmaritimeservices.com" },
         hours: { title: "Horario", content: "24/7 - Servicio continuo" },
       },
@@ -343,9 +341,7 @@ export const translations = {
       ],
       stats: [
         { value: "10+", label: "Years of experience" },
-        { value: "500+", label: "Vessels served" },
-        { value: "15", label: "Operating ports" },
-        { value: "98%", label: "Satisfied clients" },
+        { value: "50+", label: "Vessels served" },
       ],
     },
     clients: {
@@ -376,11 +372,11 @@ export const translations = {
     },
     contact: {
       tagline: "Contact",
-      title: "Let's talk about your project",
-      description: "We are ready to meet your needs. Contact us for a personalized quote with no obligation.",
+      title: "Let's coordinate your next port call in Venezuela",
+      description: "We are ready to manage the comprehensive provisioning of your vessel. Send us your supply requirements and ensure an efficient operation without delays.",
       info: {
         address: { title: "Address", content: "Main Port, Maritime Ave. 1234" },
-        phone: { title: "Phone", content: "+1 (555) 123-4567" },
+        phone: { title: "Phone", content: "+58 424-6258080 / +58 414-6447791" },
         email: { title: "Email", content: "info@worldmaritimeservices.com" },
         hours: { title: "Hours", content: "24/7 - Continuous service" },
       },

@@ -27,16 +27,16 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo-header.svg"
               alt="World Maritime Services Logo"
               width={250}
               height={100}
-              className="h-14 lg:h-14 w-auto object-contain"
+              className="h-10 lg:h-14 w-auto object-contain"
               priority
             />
-            <div className="flex flex-col">
+            <div className="hidden md:flex flex-col">
               <span className="text-xl text-blue-500 font-semibold text-foreground leading-none">World Maritime</span>
               <span className="text-xl text-blue-500 font-normal text-foreground leading-none ">Services</span>
             </div>
