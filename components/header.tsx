@@ -33,12 +33,12 @@ export function Header() {
               alt="World Maritime Services Logo"
               width={250}
               height={100}
-              className="h-8 sm:h-10 lg:h-14 w-auto object-contain flex-shrink-0"
+              className="h-10 sm:h-12 lg:h-14 w-auto object-contain flex-shrink-0"
               priority
             />
             <div className="flex flex-col min-w-0">
-              <span className="text-[10px] sm:text-sm md:text-xl font-semibold text-foreground leading-none truncate">World Maritime</span>
-              <span className="text-[10px] sm:text-sm md:text-xl font-normal text-foreground leading-none truncate">Services</span>
+              <span className="text-sm sm:text-base md:text-xl font-semibold text-foreground leading-none truncate">World Maritime</span>
+              <span className="text-sm sm:text-base md:text-xl font-normal text-foreground leading-none truncate">Services</span>
             </div>
           </Link>
 
