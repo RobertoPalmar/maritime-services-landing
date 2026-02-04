@@ -11,7 +11,7 @@ export function StatsBanner() {
     const stats = t.about.stats
 
     return (
-        <section className="relative py-12 bg-primary shadow-2xl">
+        <section className="relative py-12 bg-primary shadow-2xl overflow-hidden">
             <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <FadeInSection direction="up">
                     <div className="grid grid-cols-2 gap-8 md:gap-16 justify-center items-center max-w-4xl mx-auto">

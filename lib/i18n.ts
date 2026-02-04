@@ -138,7 +138,7 @@ export const translations = {
       info: {
         address: { title: "Dirección", content: "Puerto Principal, Av. Marítima 1234" },
         phone: { title: "Teléfono", content: "+58 424-6258080 / +58 414-6447791" },
-        email: { title: "Email", content: "info@worldmaritimeservices.com" },
+        email: { title: "Email", content: "info@wmaritimes.com" },
         hours: { title: "Horario", content: "24/7 - Servicio continuo" },
       },
       form: {
@@ -153,9 +153,9 @@ export const translations = {
         service: "Servicio de interés",
         servicePlaceholder: "Seleccione un servicio",
         serviceOptions: [
-          { value: "provisions", label: "Provisiones y Suministros" },
+          { value: "provisions", label: "Provisiones Suministros" },
           { value: "technical", label: "Suministros Técnicos" },
-          { value: "port", label: "Servicios Portuarios" },
+          { value: "garbage", label: "Eliminación de residuos" },
           { value: "other", label: "Otro" },
         ],
         message: "Mensaje",
@@ -325,7 +325,7 @@ export const translations = {
       info: {
         address: { title: "Address", content: "Main Port, Maritime Ave. 1234" },
         phone: { title: "Phone", content: "+58 424-6258080 / +58 414-6447791" },
-        email: { title: "Email", content: "info@worldmaritimeservices.com" },
+        email: { title: "Email", content: "info@wmaritimes.com" },
         hours: { title: "Hours", content: "24/7 - Continuous service" },
       },
       form: {
@@ -340,9 +340,9 @@ export const translations = {
         service: "Service of interest",
         servicePlaceholder: "Select a service",
         serviceOptions: [
-          { value: "provisions", label: "Provisions & Supplies" },
+          { value: "provisions", label: "Provisions Supplies" },
           { value: "technical", label: "Technical Supplies" },
-          { value: "port", label: "Port Services" },
+          { value: "garbage", label: "Garbage Disposal" },
           { value: "other", label: "Other" },
         ],
         message: "Message",
@@ -358,7 +358,7 @@ export const translations = {
       services: [
         { label: "General Provisions", href: "#services" },
         { label: "Technical Supplies", href: "#services" },
-        { label: "Port Services", href: "#services" },
+        { label: "Garbage Disposal", href: "#services" },
       ],
       companyTitle: "Company",
       company: [

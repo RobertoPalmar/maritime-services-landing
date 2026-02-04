@@ -57,22 +57,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
-          <div>
-            <h4 className="font-semibold mb-4">{t.footer.legalTitle}</h4>
-            <ul className="space-y-3">
-              {t.footer.legal.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    href={link.href}
-                    className="text-primary-foreground/70 hover:text-primary-foreground text-sm transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </TranslatedBlock>
 
         {/* Bottom */}

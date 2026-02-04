@@ -30,6 +30,26 @@ const categoryColors = [
   "bg-emerald-500/10 text-emerald-600",
 ]
 
+const provisionImages = [
+  { src: "/services/service grid/provisions.jpg", name: "Provisions" },
+  { src: "/services/service grid/beef.jpg", name: "Beef" },
+  { src: "/services/service grid/processed meat.jpg", name: "Processed Meat" },
+  { src: "/services/service grid/cabin stores.jpg", name: "Cabin Stores" },
+  { src: "/services/service grid/deck & engine stores.jpg", name: "Deck & Engine Stores" },
+  { src: "/services/service grid/bonded & welfare.jpg", name: "Bonded & Welfare" },
+]
+
+const technicalImages = [
+  { src: "/services/service-3/spare part.jpg", name: "Spare Parts" },
+  { src: "/services/service-3/lubricants oils,.jpg", name: "Lubricants & Oils" },
+]
+
+const portServicesImages = [
+  { src: "/services/service-2/ship cleaning.jpg", name: "Ship Cleaning" },
+  { src: "/services/service-2/garbage disposal.jpg", name: "Garbage Disposal" },
+]
+
+
 export function Services() {
   const { t, locale } = useI18n()
   const sectionId = locale === "es" ? "servicios" : "services"
@@ -61,7 +81,6 @@ export function Services() {
             const isImageRight = catIndex % 2 === 0
             const accentColor = catIndex === 0 ? 'text-blue-500' : catIndex === 1 ? 'text-amber-500' : 'text-emerald-500'
             const bgAccent = catIndex === 0 ? 'bg-blue-500/10' : catIndex === 1 ? 'bg-amber-500/10' : 'bg-emerald-500/10'
-            const shipImage = catIndex === 0 ? "/services/service-supplies-4.jpg" : catIndex === 1 ? "/services/service-supplies-6.jpg" : "/services/service-supplies-5.jpg"
 
             return (
               <div key={catIndex} className="grid lg:grid-cols-12 gap-6 lg:gap-12 items-center py-4">
@@ -103,28 +122,52 @@ export function Services() {
                   </div>
                 </FadeInSection>
 
-                {/* Image Column */}
+                {/* Image Column / Grid Column */}
                 <FadeInSection
                   className={`lg:col-span-6 h-full ${!isImageRight ? "lg:order-1" : ""}`}
                   direction={isImageRight ? "right" : "left"}
                 >
-                  <div className="relative h-full aspect-video lg:aspect-auto rounded-3xl overflow-hidden shadow-2xl group lg:min-h-[300px]">
-                    <Image
-                      src={shipImage}
-                      alt={category.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/20 to-transparent" />
-
-                    {/* Decorative Elements */}
-                    <div className="absolute top-6 left-6">
-                      <div className="px-4 py-2 rounded-full bg-background/90 backdrop-blur-md text-foreground text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-                        <span className={`w-2 h-2 rounded-full ${catIndex === 0 ? 'bg-blue-500' : catIndex === 1 ? 'bg-amber-500' : 'bg-emerald-500'} animate-pulse`} />
-                        {(category as any).imageLabel}
-                      </div>
+                  {catIndex === 0 ? (
+                    /* 3x2 Grid for first category */
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 h-full min-h-[400px] lg:min-h-[500px]">
+                      {provisionImages.map((img, i) => (
+                        <div key={i} className="relative group overflow-hidden rounded-2xl shadow-lg border border-border/50 h-full">
+                          <Image
+                            src={img.src}
+                            alt={img.name}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+                          <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                            <p className="text-white text-[10px] sm:text-sm font-bold uppercase tracking-wider line-clamp-2">
+                              {img.name}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                  </div>
+                  ) : (
+                    /* 2x1 Grid for other categories */
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 h-full min-h-[200px] lg:min-h-[400px]">
+                      {(catIndex === 1 ? technicalImages : portServicesImages).map((img, i) => (
+                        <div key={i} className="relative group overflow-hidden rounded-2xl shadow-lg border border-border/50 h-full aspect-[16/7] sm:aspect-auto">
+                          <Image
+                            src={img.src}
+                            alt={img.name}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+                          <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                            <p className="text-white text-sm font-bold uppercase tracking-wider">
+                              {img.name}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </FadeInSection>
               </div>
             )
