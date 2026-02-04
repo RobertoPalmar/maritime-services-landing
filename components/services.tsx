@@ -31,12 +31,12 @@ const categoryColors = [
 ]
 
 const provisionImages = [
-  { src: "/services/service grid/provisions.jpg", name: "Provisions" },
-  { src: "/services/service grid/beef.jpg", name: "Beef" },
-  { src: "/services/service grid/processed meat.jpg", name: "Processed Meat" },
-  { src: "/services/service grid/cabin stores.jpg", name: "Cabin Stores" },
-  { src: "/services/service grid/deck & engine stores.jpg", name: "Deck & Engine Stores" },
-  { src: "/services/service grid/bonded & welfare.jpg", name: "Bonded & Welfare" },
+  { src: "/services/service-1/provisions.jpg", name: "Provisions" },
+  { src: "/services/service-1/beef.jpg", name: "Beef" },
+  { src: "/services/service-1/processed meat.jpg", name: "Processed Meat" },
+  { src: "/services/service-1/cabin stores.jpg", name: "Cabin Stores" },
+  { src: "/services/service-1/deck & engine stores.jpg", name: "Deck & Engine Stores" },
+  { src: "/services/service-1/bonded & welfare.jpg", name: "Bonded & Welfare" },
 ]
 
 const technicalImages = [
