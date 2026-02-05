@@ -52,6 +52,7 @@ export const translations = {
               description: "Suministro de agua potable y mineral con una red logística propia que garantiza puntualidad.",
             },
           ],
+          gallery: ["Provisiones", "Carne de Res", "Carnes Procesadas", "Suministros de Cabina", "Cubierta y Motores", "Almacenaje y Bienestar"],
         },
         {
           title: "Suministros Técnicos y Consumibles",
@@ -70,6 +71,7 @@ export const translations = {
               description: "Transporte seguro y eficiente de piezas críticas directamente a su embarcación, minimizando tiempos de inactividad.",
             },
           ],
+          gallery: ["Repuestos", "Lubricantes y Aceites"],
         },
         {
           title: "Servicios Portuarios Especializados",
@@ -88,6 +90,7 @@ export const translations = {
               description: "Coordinación de servicios de pilotaje, entrega de suministros de oficina y gestión de artículos misceláneos.",
             },
           ],
+          gallery: ["Limpieza de Buques", "Gestión de Residuos"],
         },
       ],
     },
@@ -239,6 +242,7 @@ export const translations = {
               description: "Supply of drinking and mineral water with our own logistics network guaranteeing punctuality.",
             },
           ],
+          gallery: ["Provisions", "Beef", "Processed Meat", "Cabin Stores", "Deck & Engine Stores", "Bonded & Welfare"],
         },
         {
           title: "Technical Supplies & Consumables",
@@ -257,6 +261,7 @@ export const translations = {
               description: "Safe and efficient transport of critical parts directly to your vessel, minimizing downtime.",
             },
           ],
+          gallery: ["Spare Parts", "Lubricants & Oils"],
         },
         {
           title: "Specialized Port Services",
@@ -275,6 +280,7 @@ export const translations = {
               description: "Coordination of pilotage services, office supplies delivery, and miscellaneous items management.",
             },
           ],
+          gallery: ["Ship Cleaning", "Garbage Disposal"],
         },
       ],
     },

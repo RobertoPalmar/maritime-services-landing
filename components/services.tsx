@@ -31,22 +31,22 @@ const categoryColors = [
 ]
 
 const provisionImages = [
-  { src: "/services/service-1/provisions.jpg", name: "Provisions" },
-  { src: "/services/service-1/beef.jpg", name: "Beef" },
-  { src: "/services/service-1/processed meat.jpg", name: "Processed Meat" },
-  { src: "/services/service-1/cabin stores.jpg", name: "Cabin Stores" },
-  { src: "/services/service-1/deck & engine stores.jpg", name: "Deck & Engine Stores" },
-  { src: "/services/service-1/bonded & welfare.jpg", name: "Bonded & Welfare" },
+  { src: "/services/service-1/provisions.jpg" },
+  { src: "/services/service-1/beef.jpg" },
+  { src: "/services/service-1/processed meat 2.webp" },
+  { src: "/services/service-1/cabin stores.jpg" },
+  { src: "/services/service-1/deck & engine stores.jpg" },
+  { src: "/services/service-1/bonded & welfare.jpg" },
 ]
 
 const technicalImages = [
-  { src: "/services/service-3/spare part.jpg", name: "Spare Parts" },
-  { src: "/services/service-3/lubricants oils,.jpg", name: "Lubricants & Oils" },
+  { src: "/services/service-3/spare part.jpg" },
+  { src: "/services/service-3/lubricants oils,.jpg" },
 ]
 
 const portServicesImages = [
-  { src: "/services/service-2/ship cleaning.jpg", name: "Ship Cleaning" },
-  { src: "/services/service-2/garbage disposal.jpg", name: "Garbage Disposal" },
+  { src: "/services/service-2/ship cleaning.jpg" },
+  { src: "/services/service-2/garbage disposal.jpg" },
 ]
 
 
@@ -134,7 +134,7 @@ export function Services() {
                         <div key={i} className="relative group overflow-hidden rounded-2xl shadow-lg border border-border/50 h-full">
                           <Image
                             src={img.src}
-                            alt={img.name}
+                            alt={category.gallery?.[i] || ""}
                             fill
                             sizes="(max-width: 768px) 100vw, 33vw"
                             className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -142,7 +142,7 @@ export function Services() {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
                           <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
                             <p className="text-white text-[10px] sm:text-sm font-bold uppercase tracking-wider line-clamp-2">
-                              {img.name}
+                              {category.gallery?.[i]}
                             </p>
                           </div>
                         </div>
@@ -155,7 +155,7 @@ export function Services() {
                         <div key={i} className="relative group overflow-hidden rounded-2xl shadow-lg border border-border/50 h-full aspect-[16/7] sm:aspect-auto">
                           <Image
                             src={img.src}
-                            alt={img.name}
+                            alt={category.gallery?.[i] || ""}
                             fill
                             sizes="(max-width: 768px) 100vw, 33vw"
                             className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -163,7 +163,7 @@ export function Services() {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
                           <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
                             <p className="text-white text-sm font-bold uppercase tracking-wider">
-                              {img.name}
+                              {category.gallery?.[i]}
                             </p>
                           </div>
                         </div>
