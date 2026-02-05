@@ -2,7 +2,7 @@
 
 import React from "react"
 import { useState } from "react"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, CheckCircle2, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -10,11 +10,20 @@ import { Label } from "@/components/ui/label"
 import { useI18n } from "@/lib/i18n-context"
 import { TranslatedBlock } from "@/components/translated-text"
 import { FadeInSection } from "@/components/fade-in-section"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
 
 const contactIcons = [MapPin, Phone, Mail, Clock]
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false)
+  const [showErrorDialog, setShowErrorDialog] = useState(false)
   const { t, locale } = useI18n()
   const sectionId = locale === "es" ? "contacto" : "contact"
 
@@ -43,13 +52,13 @@ export function Contact() {
       })
 
       if (response.ok) {
-        alert(t.contact.form.successMessage)
+        setShowSuccessDialog(true)
           ; (e.target as HTMLFormElement).reset()
       } else {
-        alert("Hubo un error al enviar el mensaje. Por favor, intente nuevamente.")
+        setShowErrorDialog(true)
       }
     } catch (error) {
-      alert("Error de conexión. Por favor, verifique su internet.")
+      setShowErrorDialog(true)
     } finally {
       setIsSubmitting(false)
     }
@@ -145,6 +154,52 @@ export function Contact() {
           </FadeInSection>
         </div>
       </div>
+
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent className="sm:max-w-md text-center">
+          <DialogHeader>
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                <CheckCircle2 className="h-10 w-10 text-green-600" />
+              </div>
+            </div>
+            <DialogTitle className="text-2xl font-bold text-foreground">
+              {t.contact.form.successMessage}
+            </DialogTitle>
+            <DialogDescription className="text-muted-foreground text-lg py-4">
+              Su mensaje ha sido enviado satisfactoriamente. Nuestro equipo se pondrá en contacto con usted a la brevedad posible.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center mt-4">
+            <Button onClick={() => setShowSuccessDialog(false)} size="lg" className="w-full sm:w-auto px-12">
+              Entendido
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={showErrorDialog} onOpenChange={setShowErrorDialog}>
+        <DialogContent className="sm:max-w-md text-center border-destructive/20 shadow-destructive/5">
+          <DialogHeader>
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center">
+                <AlertCircle className="h-10 w-10 text-destructive" />
+              </div>
+            </div>
+            <DialogTitle className="text-2xl font-bold text-foreground">
+              ¡Ups! Algo salió mal
+            </DialogTitle>
+            <DialogDescription className="text-muted-foreground text-lg py-4">
+              Hubo un error al intentar enviar su mensaje. Por favor, verifique su conexión e intente nuevamente.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center mt-4">
+            <Button onClick={() => setShowErrorDialog(false)} variant="destructive" size="lg" className="w-full sm:w-auto px-12">
+              Reintentar
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   )
 }
