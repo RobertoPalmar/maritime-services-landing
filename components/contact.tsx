@@ -28,9 +28,31 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsSubmitting(false)
-    alert(t.contact.form.successMessage)
+
+    const formData = new FormData(e.currentTarget)
+    const data = Object.fromEntries(formData.entries())
+
+    try {
+      const response = await fetch("https://formspree.io/f/meeljzoq", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
+
+      if (response.ok) {
+        alert(t.contact.form.successMessage)
+          ; (e.target as HTMLFormElement).reset()
+      } else {
+        alert("Hubo un error al enviar el mensaje. Por favor, intente nuevamente.")
+      }
+    } catch (error) {
+      alert("Error de conexión. Por favor, verifique su internet.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -75,25 +97,26 @@ export function Contact() {
                 <div className="grid sm:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">{t.contact.form.name}</Label>
-                    <Input id="name" placeholder={t.contact.form.namePlaceholder} required />
+                    <Input id="name" name="name" placeholder={t.contact.form.namePlaceholder} required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="company">{t.contact.form.company}</Label>
-                    <Input id="company" placeholder={t.contact.form.companyPlaceholder} />
+                    <Input id="company" name="company" placeholder={t.contact.form.companyPlaceholder} />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">{t.contact.form.email}</Label>
-                    <Input id="email" type="email" placeholder={t.contact.form.emailPlaceholder} required />
+                    <Input id="email" name="email" type="email" placeholder={t.contact.form.emailPlaceholder} required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">{t.contact.form.phone}</Label>
-                    <Input id="phone" type="tel" placeholder={t.contact.form.phonePlaceholder} />
+                    <Input id="phone" name="phone" type="tel" placeholder={t.contact.form.phonePlaceholder} />
                   </div>
                 </div>
                 <div className="space-y-2 mb-6">
                   <Label htmlFor="service">{t.contact.form.service}</Label>
                   <select
                     id="service"
+                    name="service"
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
                     <option value="">{t.contact.form.servicePlaceholder}</option>
@@ -108,6 +131,7 @@ export function Contact() {
                   <Label htmlFor="message">{t.contact.form.message}</Label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder={t.contact.form.messagePlaceholder}
                     rows={4}
                     required
