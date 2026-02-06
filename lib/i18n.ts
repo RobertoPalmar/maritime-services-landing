@@ -139,7 +139,7 @@ export const translations = {
       title: "Coordinemos su próxima escala en puerto venezolano",
       description: "Estamos listos para gestionar el aprovisionamiento integral de su buque. Envíenos sus requerimientos de suministros y garantice una operación eficiente y sin retrasos.",
       info: {
-        address: { title: "Dirección", content: "Puerto Principal, Av. Marítima 1234" },
+        address: { title: "Dirección", content: "Av.4 Bella Vista / Calle 67 / Edif. General de Seguros / Piso No. 4" },
         phone: { title: "Teléfono", content: "+58 424-6258080 / +58 414-6447791" },
         email: { title: "Email", content: "info@wmaritimes.com" },
         hours: { title: "Horario", content: "24/7 - Servicio continuo" },
@@ -329,7 +329,7 @@ export const translations = {
       title: "Let's coordinate your next port call in Venezuela",
       description: "We are ready to manage the comprehensive provisioning of your vessel. Send us your supply requirements and ensure an efficient operation without delays.",
       info: {
-        address: { title: "Address", content: "Main Port, Maritime Ave. 1234" },
+        address: { title: "Address", content: "4th Ave. Bella Vista / 67th Street / General de Seguros Building / 4th Floor" },
         phone: { title: "Phone", content: "+58 424-6258080 / +58 414-6447791" },
         email: { title: "Email", content: "info@wmaritimes.com" },
         hours: { title: "Hours", content: "24/7 - Continuous service" },
