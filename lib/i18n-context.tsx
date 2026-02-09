@@ -13,14 +13,14 @@ interface I18nContextType {
 const I18nContext = createContext<I18nContextType | undefined>(undefined)
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("es")
+  const [locale, setLocaleState] = useState<Locale>("en")
   const [isTransitioning, setIsTransitioning] = useState(false)
 
   const setLocale = useCallback((newLocale: Locale) => {
     if (newLocale === locale) return
-    
+
     setIsTransitioning(true)
-    
+
     setTimeout(() => {
       setLocaleState(newLocale)
       setTimeout(() => {

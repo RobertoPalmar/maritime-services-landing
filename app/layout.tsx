@@ -7,8 +7,8 @@ import './globals.css'
 const _inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'World Maritime Services | Servicios Marítimos Profesionales',
-  description: 'Expertos en provisiones, suministros técnicos y servicios portuarios para barcos y navíos. Más de 20 años de experiencia en el sector naval.',
+  title: 'World Maritime Services | Professional Maritime Services',
+  description: 'Experts in provisions, technical supplies, and port services for ships and vessels. Over a decade of experience in the naval sector.',
   generator: 'v0.app',
 }
 
