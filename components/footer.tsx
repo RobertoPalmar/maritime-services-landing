@@ -1,13 +1,14 @@
 "use client"
 
 import Link from "next/link"
-import { Anchor, Instagram, Linkedin } from "lucide-react"
+import { Anchor, Facebook, Instagram, Linkedin } from "lucide-react"
 import { useI18n } from "@/lib/i18n-context"
 import { TranslatedBlock } from "@/components/translated-text"
 
 const socialIcons: Record<string, typeof Instagram> = {
   Instagram,
   LinkedIn: Linkedin,
+  Facebook,
 }
 
 export function Footer() {

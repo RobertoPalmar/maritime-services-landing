@@ -208,6 +208,7 @@ export const translations = {
       social: [
         { label: "Instagram", handle: "@wmaritimes", href: "https://www.instagram.com/wmaritimes" },
         { label: "LinkedIn", handle: "World Maritime Services", href: "https://www.linkedin.com/company/world-maritime-services/" },
+        { label: "Facebook", handle: "World Maritime Services", href: "https://www.facebook.com/people/World-Maritime-Services/61590241078295/" },
       ],
       copyright: "Todos los derechos reservados.",
     },
@@ -419,6 +420,7 @@ export const translations = {
       social: [
         { label: "Instagram", handle: "@wmaritimes", href: "https://www.instagram.com/wmaritimes" },
         { label: "LinkedIn", handle: "World Maritime Services", href: "https://www.linkedin.com/company/world-maritime-services/" },
+        { label: "Facebook", handle: "World Maritime Services", href: "https://www.facebook.com/people/World-Maritime-Services/61590241078295/" },
       ],
       copyright: "All rights reserved.",
     },

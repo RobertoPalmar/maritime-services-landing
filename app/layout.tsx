@@ -106,6 +106,7 @@ const organizationSchema = {
   sameAs: [
     'https://www.instagram.com/wmaritimes',
     'https://www.linkedin.com/company/world-maritime-services/',
+    'https://www.facebook.com/people/World-Maritime-Services/61590241078295/',
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
