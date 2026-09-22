@@ -51,7 +51,10 @@ function AnimatedCounter({ value, className }: { value: string; className?: stri
         }
     }, [value])
 
-    const [displayValue, setDisplayValue] = useState(0)
+    // Starts at the final value so the server-rendered HTML carries the real
+    // number: crawlers and no-JS visitors must never read "0+ vessels served".
+    // The client resets to zero before animating (see the effect below).
+    const [displayValue, setDisplayValue] = useState(() => parsed?.targetValue ?? 0)
 
     // Use a stable reference for the ref callback or ensure the hook handles ref changes correctly. 
     // The current useInView implementation re-creates the observer if options change.
@@ -60,7 +63,15 @@ function AnimatedCounter({ value, className }: { value: string; className?: stri
     const { ref, isInView } = useInView(inViewOptions)
 
     useEffect(() => {
-        if (isInView && parsed) {
+        if (!parsed) return
+
+        // Not scrolled into view yet: rewind to zero so the count-up has somewhere to go.
+        if (!isInView) {
+            setDisplayValue(0)
+            return
+        }
+
+        {
             const { targetValue } = parsed
             const startTime = performance.now()
             let animationFrameId: number

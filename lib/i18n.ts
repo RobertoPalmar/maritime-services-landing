@@ -126,7 +126,7 @@ export const translations = {
       ],
       stats: [
         { value: "10+", label: "Años de experiencia" },
-        { value: "+50", label: "Embarcaciones atendidas" },
+        { value: "200+", label: "Embarcaciones atendidas" },
       ],
     },
     clients: {
@@ -337,7 +337,7 @@ export const translations = {
       ],
       stats: [
         { value: "10+", label: "Years of experience" },
-        { value: "+50", label: "Vessels served" },
+        { value: "200+", label: "Vessels served" },
       ],
     },
     clients: {
