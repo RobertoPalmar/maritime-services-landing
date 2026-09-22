@@ -41,7 +41,8 @@ export function Contact() {
     const formData = new FormData(e.currentTarget)
 
     try {
-      // Sent as multipart/form-data so RFQ file attachments are included.
+      // Sent as multipart/form-data. Plain fields travel fine this way, and it is
+      // the shape file uploads need, so re-enabling RFQ attachments is just the input.
       // Content-Type is intentionally omitted: the browser sets the multipart boundary.
       const response = await fetch("https://formspree.io/f/meeljzoq", {
         method: "POST",
@@ -160,18 +161,6 @@ export function Contact() {
                     <Label htmlFor="eta">{t.contact.form.eta}</Label>
                     <Input id="eta" name="eta" type="date" />
                   </div>
-                </div>
-                <div className="space-y-2 mb-6">
-                  <Label htmlFor="rfqDocuments">{t.contact.form.rfqDocuments}</Label>
-                  <Input
-                    id="rfqDocuments"
-                    name="rfqDocuments"
-                    type="file"
-                    multiple
-                    accept=".pdf,.doc,.docx,.xls,.xlsx"
-                    className="h-auto py-2 file:mr-4 file:rounded-md file:border-0 file:bg-primary file:px-4 file:py-1.5 file:text-sm file:font-medium file:text-primary-foreground"
-                  />
-                  <p className="text-xs text-muted-foreground">{t.contact.form.rfqDocumentsHint}</p>
                 </div>
                 <div className="space-y-2 mb-6">
                   <Label htmlFor="service">{t.contact.form.service}</Label>

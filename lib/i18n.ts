@@ -167,8 +167,6 @@ export const translations = {
           { value: "other", label: "Otro" },
         ],
         eta: "ETA a puerto",
-        rfqDocuments: "Documentos RFQ",
-        rfqDocumentsHint: "PDF, Word o Excel. Máximo 10 MB.",
         service: "Servicio de interés",
         servicePlaceholder: "Seleccione un servicio",
         serviceOptions: [
@@ -379,8 +377,6 @@ export const translations = {
           { value: "other", label: "Other" },
         ],
         eta: "ETA to port",
-        rfqDocuments: "RFQ documents",
-        rfqDocumentsHint: "PDF, Word or Excel. 10 MB maximum.",
         service: "Service of interest",
         servicePlaceholder: "Select a service",
         serviceOptions: [
