@@ -1,9 +1,14 @@
 "use client"
 
 import Link from "next/link"
-import { Anchor } from "lucide-react"
+import { Anchor, Instagram, Linkedin } from "lucide-react"
 import { useI18n } from "@/lib/i18n-context"
 import { TranslatedBlock } from "@/components/translated-text"
+
+const socialIcons: Record<string, typeof Instagram> = {
+  Instagram,
+  LinkedIn: Linkedin,
+}
 
 export function Footer() {
   const { t } = useI18n()
@@ -54,6 +59,30 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Social */}
+          <div>
+            <h4 className="font-semibold mb-4">{t.footer.followTitle}</h4>
+            <ul className="space-y-3">
+              {t.footer.social.map((link) => {
+                const Icon = socialIcons[link.label]
+                return (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${link.label} — ${link.handle}`}
+                      className="text-primary-foreground/70 hover:text-primary-foreground text-sm transition-colors inline-flex items-center gap-2"
+                    >
+                      {Icon ? <Icon className="h-4 w-4" aria-hidden="true" /> : null}
+                      {link.handle}
+                    </a>
+                  </li>
+                )
+              })}
             </ul>
           </div>
 

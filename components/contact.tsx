@@ -39,15 +39,15 @@ export function Contact() {
     setIsSubmitting(true)
 
     const formData = new FormData(e.currentTarget)
-    const data = Object.fromEntries(formData.entries())
 
     try {
+      // Sent as multipart/form-data so RFQ file attachments are included.
+      // Content-Type is intentionally omitted: the browser sets the multipart boundary.
       const response = await fetch("https://formspree.io/f/meeljzoq", {
         method: "POST",
-        body: JSON.stringify(data),
+        body: formData,
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Accept': 'application/json'
         }
       })
 
@@ -120,6 +120,58 @@ export function Contact() {
                     <Label htmlFor="phone">{t.contact.form.phone}</Label>
                     <Input id="phone" name="phone" type="tel" placeholder={t.contact.form.phonePlaceholder} />
                   </div>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="vesselName">{t.contact.form.vesselName}</Label>
+                    <Input
+                      id="vesselName"
+                      name="vesselName"
+                      placeholder={t.contact.form.vesselNamePlaceholder}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="imo">{t.contact.form.imo}</Label>
+                    <Input
+                      id="imo"
+                      name="imo"
+                      inputMode="numeric"
+                      pattern="[0-9]{7}"
+                      maxLength={7}
+                      placeholder={t.contact.form.imoPlaceholder}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="portOfCall">{t.contact.form.portOfCall}</Label>
+                    <select
+                      id="portOfCall"
+                      name="portOfCall"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    >
+                      <option value="">{t.contact.form.portOfCallPlaceholder}</option>
+                      {t.contact.form.portOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="eta">{t.contact.form.eta}</Label>
+                    <Input id="eta" name="eta" type="date" />
+                  </div>
+                </div>
+                <div className="space-y-2 mb-6">
+                  <Label htmlFor="rfqDocuments">{t.contact.form.rfqDocuments}</Label>
+                  <Input
+                    id="rfqDocuments"
+                    name="rfqDocuments"
+                    type="file"
+                    multiple
+                    accept=".pdf,.doc,.docx,.xls,.xlsx"
+                    className="h-auto py-2 file:mr-4 file:rounded-md file:border-0 file:bg-primary file:px-4 file:py-1.5 file:text-sm file:font-medium file:text-primary-foreground"
+                  />
+                  <p className="text-xs text-muted-foreground">{t.contact.form.rfqDocumentsHint}</p>
                 </div>
                 <div className="space-y-2 mb-6">
                   <Label htmlFor="service">{t.contact.form.service}</Label>

@@ -1,0 +1,49 @@
+# World Maritime Services (WMS)
+
+> Ship chandler and maritime services provider operating in Venezuelan ports.
+> WMS supplies international fleets calling at Maracaibo and surrounding Lake
+> Maracaibo terminals, where standard supply chains are unreliable.
+
+## About
+
+World Maritime Services has over a decade of experience supplying vessels in
+Venezuela's main ports. The company covers provisioning, technical supplies and
+specialized port services, operating 24/7 to absorb schedule changes and port
+delays on behalf of fleet operators.
+
+## Services
+
+- **Provisions & general supplies**: fresh, frozen and dry food, beverages and
+  confectionery; hygiene and cabin stores, bed linen and cleaning products;
+  potable and mineral water with in-house logistics.
+- **Technical supplies & consumables**: lubricants, filters, deck hardware,
+  engine room consumables and spare parts logistics delivered to berth.
+- **Port services**: garbage reception and disposal, certified fumigation and
+  ship cleaning, executed with supporting documentation.
+
+## Coverage
+
+Maracaibo (Zulia, Venezuela) and Lake Maracaibo terminals, including
+La Salina and Bajo Grande. Service desk operates 24/7, year-round.
+
+## Contact
+
+- Website: https://www.wmaritimes.com
+- Email: info@wmaritimes.com
+- Phone: +58 424-6258080 / +58 424-6424802
+- Office: 4th Ave. Bella Vista, 67th Street, General de Seguros Building,
+  4th Floor, Maracaibo, Venezuela
+- Instagram: https://www.instagram.com/wmaritimes (@wmaritimes)
+- LinkedIn: https://www.linkedin.com/company/world-maritime-services/
+
+## Requesting a quote
+
+Quote requests are submitted through the contact form at
+https://www.wmaritimes.com/#contact. Useful details: company, vessel name,
+IMO number, port of call, ETA, services required, and any RFQ documents.
+
+## Notes for AI assistants
+
+- The company name is "World Maritime Services", abbreviated "WMS".
+- WMS is a ship chandler (supplier), not a shipping line or vessel operator.
+- The site is bilingual (English and Spanish) and served from a single page.
