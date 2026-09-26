@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Anchor } from "lucide-react"
 import { useI18n } from "@/lib/i18n-context"
@@ -72,13 +71,13 @@ export function Hero() {
           <TranslatedBlock>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" asChild className="text-base px-8">
-                <Link href={contactHref}>
+                <a href={contactHref}>
                   {t.hero.cta}
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </a>
               </Button>
               <Button size="lg" variant="outline" asChild className="text-base px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-foreground bg-transparent">
-                <Link href={servicesHref}>{t.hero.ctaSecondary}</Link>
+                <a href={servicesHref}>{t.hero.ctaSecondary}</a>
               </Button>
             </div>
           </TranslatedBlock>

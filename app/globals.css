@@ -130,6 +130,18 @@
     overflow-x: hidden;
     width: 100%;
   }
+
+  /* El header es fijo (h-16 movil / h-20 desktop). Sin esto el scroll por ancla
+     deja el titulo de la seccion debajo del header. */
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    section[id] {
+      scroll-margin-top: 5rem;
+    }
+  }
 }
 
 /* Language transition animations */

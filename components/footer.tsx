@@ -35,12 +35,12 @@ export function Footer() {
             <ul className="space-y-3">
               {t.footer.services.map((link, index) => (
                 <li key={index}>
-                  <Link
+                  <a
                     href={link.href}
                     className="text-primary-foreground/70 hover:text-primary-foreground text-sm transition-colors"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -52,12 +52,12 @@ export function Footer() {
             <ul className="space-y-3">
               {t.footer.company.map((link, index) => (
                 <li key={index}>
-                  <Link
+                  <a
                     href={link.href}
                     className="text-primary-foreground/70 hover:text-primary-foreground text-sm transition-colors"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

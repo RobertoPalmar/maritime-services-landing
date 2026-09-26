@@ -45,14 +45,14 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link, index) => (
-              <Link
+              <a
                 key={index}
                 href={link.href}
                 className="flex items-center gap-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors group"
               >
                 <link.icon className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />
                 <TranslatedText>{link.label}</TranslatedText>
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -60,10 +60,10 @@ export function Header() {
           <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher />
             <Button asChild className="gap-2">
-              <Link href={contactHref}>
+              <a href={contactHref}>
                 <FileText className="h-6 w-6" />
                 <TranslatedText>{t.nav.cta}</TranslatedText>
-              </Link>
+              </a>
             </Button>
           </div>
 
@@ -86,7 +86,7 @@ export function Header() {
         <div className="md:hidden bg-background border-b border-border">
           <nav className="flex flex-col px-4 py-4 gap-4">
             {navLinks.map((link, index) => (
-              <Link
+              <a
                 key={index}
                 href={link.href}
                 className="flex items-center gap-3 text-base font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-1"
@@ -94,13 +94,13 @@ export function Header() {
               >
                 <link.icon className="h-6 w-6 text-primary" />
                 <TranslatedText>{link.label}</TranslatedText>
-              </Link>
+              </a>
             ))}
             <Button asChild className="mt-2 gap-2">
-              <Link href={contactHref}>
+              <a href={contactHref}>
                 <FileText className="h-6 w-6" />
                 <TranslatedText>{t.nav.cta}</TranslatedText>
-              </Link>
+              </a>
             </Button>
           </nav>
         </div>
