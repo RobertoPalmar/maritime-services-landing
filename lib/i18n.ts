@@ -10,10 +10,10 @@ export const translations = {
       cta: "Solicitar Cotización",
     },
     hero: {
-      tagline: "Más de una década de experiencia",
+      tagline: "Shipchandler en Venezuela · Más de una década de experiencia",
       title1: "World Maritime",
       title2: "Services",
-      description: "Servicios de alta calidad en los principales puertos de Venezuela. Su barco en buenas manos.",
+      description: "Servicios de shipchandler de alta calidad en los principales puertos de Venezuela. Su barco en buenas manos.",
       cta: "Solicitar Cotización",
       ctaSecondary: "Nuestros Servicios",
       imageAlt: "Barco comercial en el océano",
@@ -32,7 +32,7 @@ export const translations = {
       tagline: "Nuestros Servicios",
       title1: "Soluciones integrales para",
       title2: "la industria marítima",
-      description: "Ofrecemos una gama completa de servicios diseñados para mantener su flota operando de manera eficiente y segura.",
+      description: "Como shipchandler integral, ofrecemos una gama completa de servicios diseñados para mantener su flota operando de manera eficiente y segura.",
       qualityGuaranteed: "Calidad Garantizada",
       categories: [
         {
@@ -96,7 +96,7 @@ export const translations = {
     },
     whyUs: {
       tagline: "¿Por qué elegirnos?",
-      title: "Su socio de confianza en servicios marítimos",
+      title: "Su shipchandler de confianza en Venezuela",
       description: "Nos diferenciamos por nuestra dedicación a la excelencia y nuestro profundo conocimiento del sector marítimo.",
       features: [
         {
@@ -116,7 +116,7 @@ export const translations = {
     about: {
       tagline: "Sobre Nosotros",
       title: "Comprometidos con la excelencia marítima",
-      description: "Desde hace más de una década, World Maritime Services se ha consolidado como líder en servicios marítimos de alta calidad. Nuestra misión es proporcionar soluciones integrales que superen las expectativas de nuestros clientes, manteniendo los más altos estándares de calidad y seguridad.",
+      description: "Desde hace más de una década, World Maritime Services se ha consolidado como shipchandler líder en servicios marítimos de alta calidad. Nuestra misión es proporcionar soluciones integrales que superen las expectativas de nuestros clientes, manteniendo los más altos estándares de calidad y seguridad.",
       features: [
         "Personal altamente capacitado y certificado",
         "Cobertura en los principales puertos del país",
@@ -132,12 +132,12 @@ export const translations = {
     clients: {
       tagline: "Clientes",
       title: "Empresas que confían en nuestra excelencia",
-      description: "Hemos gestionado con éxito los suministros y la logística para algunas de las flotas más exigentes del sector. Nuestra reputación se construye sobre la fiabilidad en cada escala",
+      description: "Como shipchandler hemos gestionado con éxito los suministros y la logística para algunas de las flotas más exigentes del sector. Nuestra reputación se construye sobre la fiabilidad en cada escala",
     },
     contact: {
       tagline: "Contacto",
       title: "Coordinemos su próxima escala en puerto venezolano",
-      description: "Estamos listos para gestionar el aprovisionamiento integral de su buque. Envíenos sus requerimientos de suministros y garantice una operación eficiente y sin retrasos.",
+      description: "Como shipchandler en puertos venezolanos, estamos listos para gestionar el aprovisionamiento integral de su buque. Envíenos sus requerimientos de suministros y garantice una operación eficiente y sin retrasos.",
       info: {
         address: { title: "Dirección", content: "Av.4 Bella Vista / Calle 67 / Edif. General de Seguros / Piso No. 4 / Maracaibo, Venezuela" },
         phone: { title: "Teléfono", content: "+58 424-6258080 / +58 424-6424802" },
@@ -167,6 +167,8 @@ export const translations = {
           { value: "other", label: "Otro" },
         ],
         eta: "ETA a puerto",
+        rfqDocuments: "Documentos RFQ",
+        rfqDocumentsHint: "PDF, Word o Excel. Máximo 3 archivos, 5 MB cada uno.",
         service: "Servicio de interés",
         servicePlaceholder: "Seleccione un servicio",
         serviceOptions: [
@@ -220,10 +222,10 @@ export const translations = {
       cta: "Get a Quote",
     },
     hero: {
-      tagline: "Over a decade of experience",
+      tagline: "Ship chandler in Venezuela · Over a decade of experience",
       title1: "World Maritime",
       title2: "Services",
-      description: "High-quality services in Venezuela's main ports. Your Ship in good hands.",
+      description: "High-quality ship chandler services in Venezuela's main ports. Your Ship in good hands.",
       cta: "Get a Quote",
       ctaSecondary: "Our Services",
       imageAlt: "Commercial ship in the ocean",
@@ -242,7 +244,7 @@ export const translations = {
       tagline: "Our Services",
       title1: "Comprehensive solutions for",
       title2: "the maritime industry",
-      description: "We offer a complete range of services designed to keep your fleet operating efficiently and safely.",
+      description: "As a full-service shipchandler, we offer a complete range of services designed to keep your fleet operating efficiently and safely.",
       qualityGuaranteed: "Guaranteed Quality",
       categories: [
         {
@@ -306,7 +308,7 @@ export const translations = {
     },
     whyUs: {
       tagline: "Why Choose Us?",
-      title: "Your trusted partner in maritime services",
+      title: "Your trusted ship chandler in Venezuela",
       description: "We stand out for our dedication to excellence and our deep knowledge of the maritime sector.",
       features: [
         {
@@ -326,7 +328,7 @@ export const translations = {
     about: {
       tagline: "About Us",
       title: "Committed to maritime excellence",
-      description: "For over a decade, World Maritime Services has established itself as a leader in high-quality maritime services. Our mission is to provide comprehensive solutions that exceed our clients' expectations, maintaining the highest standards of quality and safety.",
+      description: "For over a decade, World Maritime Services has established itself as a leading ship chandler in high-quality maritime services. Our mission is to provide comprehensive solutions that exceed our clients' expectations, maintaining the highest standards of quality and safety.",
       features: [
         "Highly trained and certified personnel",
         "Coverage in the main ports of the country",
@@ -342,12 +344,12 @@ export const translations = {
     clients: {
       tagline: "Clients",
       title: "Companies that trust in our excellence",
-      description: "We have successfully managed supplies and logistics for some of the most demanding fleets in the industry. Our reputation is built on reliability at every port of call.",
+      description: "As a shipchandler, we have successfully managed supplies and logistics for some of the most demanding fleets in the industry. Our reputation is built on reliability at every port of call.",
     },
     contact: {
       tagline: "Contact",
       title: "Let's coordinate your next port call in Venezuela",
-      description: "We are ready to manage the comprehensive provisioning of your vessel. Send us your supply requirements and ensure an efficient operation without delays.",
+      description: "As your ship chandler in Venezuelan ports, we are ready to manage the comprehensive provisioning of your vessel. Send us your supply requirements and ensure an efficient operation without delays.",
       info: {
         address: { title: "Address", content: "4th Ave. Bella Vista / 67th Street / General de Seguros Building / 4th Floor / Maracaibo, Venezuela" },
         phone: { title: "Phone", content: "+58 424-6258080 / +58 424-6424802" },
@@ -377,6 +379,8 @@ export const translations = {
           { value: "other", label: "Other" },
         ],
         eta: "ETA to port",
+        rfqDocuments: "RFQ documents",
+        rfqDocumentsHint: "PDF, Word or Excel. Up to 3 files, 5 MB each.",
         service: "Service of interest",
         servicePlaceholder: "Select a service",
         serviceOptions: [
