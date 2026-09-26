@@ -20,10 +20,22 @@ import {
 
 const contactIcons = [MapPin, Phone, Mail, Clock]
 
+// The API route answers with a stable error code; anything unmapped falls back
+// to the dialog's generic copy.
+const ERROR_MESSAGES: Record<string, string> = {
+  file_too_large: "Los archivos adjuntos son demasiado grandes. Máximo 5 MB por archivo y 15 MB en total.",
+  file_type_not_allowed: "Formato de archivo no admitido. Adjunte PDF, Word o Excel.",
+  too_many_files: "Puede adjuntar un máximo de 3 archivos.",
+  upload_failed: "No se pudo procesar el archivo adjunto. Intente de nuevo.",
+  invalid_email: "El correo electrónico no es válido.",
+  missing_fields: "Complete nombre, correo y mensaje antes de enviar.",
+}
+
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccessDialog, setShowSuccessDialog] = useState(false)
   const [showErrorDialog, setShowErrorDialog] = useState(false)
+  const [errorDetail, setErrorDetail] = useState<string | null>(null)
   const { t, locale } = useI18n()
   const sectionId = locale === "es" ? "contacto" : "contact"
 
@@ -41,10 +53,10 @@ export function Contact() {
     const formData = new FormData(e.currentTarget)
 
     try {
-      // Sent as multipart/form-data. Plain fields travel fine this way, and it is
-      // the shape file uploads need, so re-enabling RFQ attachments is just the input.
+      // Sent as multipart/form-data so the RFQ attachments ride along.
       // Content-Type is intentionally omitted: the browser sets the multipart boundary.
-      const response = await fetch("https://formspree.io/f/meeljzoq", {
+      // contact.php sits next to the exported site, so this is a same-origin call.
+      const response = await fetch("/contact.php", {
         method: "POST",
         body: formData,
         headers: {
@@ -53,12 +65,16 @@ export function Contact() {
       })
 
       if (response.ok) {
+        setErrorDetail(null)
         setShowSuccessDialog(true)
           ; (e.target as HTMLFormElement).reset()
       } else {
+        const { error } = await response.json().catch(() => ({ error: null }))
+        setErrorDetail(ERROR_MESSAGES[error as string] ?? null)
         setShowErrorDialog(true)
       }
     } catch (error) {
+      setErrorDetail(null)
       setShowErrorDialog(true)
     } finally {
       setIsSubmitting(false)
@@ -163,6 +179,18 @@ export function Contact() {
                   </div>
                 </div>
                 <div className="space-y-2 mb-6">
+                  <Label htmlFor="rfqDocuments">{t.contact.form.rfqDocuments}</Label>
+                  <Input
+                    id="rfqDocuments"
+                    name="rfqDocuments"
+                    type="file"
+                    multiple
+                    accept=".pdf,.doc,.docx,.xls,.xlsx"
+                    className="h-auto py-2 file:mr-4 file:rounded-md file:border-0 file:bg-primary file:px-4 file:py-1.5 file:text-sm file:font-medium file:text-primary-foreground"
+                  />
+                  <p className="text-xs text-muted-foreground">{t.contact.form.rfqDocumentsHint}</p>
+                </div>
+                <div className="space-y-2 mb-6">
                   <Label htmlFor="service">{t.contact.form.service}</Label>
                   <select
                     id="service"
@@ -187,6 +215,15 @@ export function Contact() {
                     required
                   />
                 </div>
+                {/* Honeypot: hidden from users, bots fill it and get silently dropped. */}
+                <input
+                  type="text"
+                  name="_gotcha"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="hidden"
+                />
                 <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                   {isSubmitting ? t.contact.form.submitting : t.contact.form.submit}
                 </Button>
@@ -231,7 +268,7 @@ export function Contact() {
               ¡Ups! Algo salió mal
             </DialogTitle>
             <DialogDescription className="text-muted-foreground text-lg py-4">
-              Hubo un error al intentar enviar su mensaje. Por favor, verifique su conexión e intente nuevamente.
+              {errorDetail ?? "Hubo un error al intentar enviar su mensaje. Por favor, verifique su conexión e intente nuevamente."}
             </DialogDescription>
           </DialogHeader>
           <div className="flex justify-center mt-4">
