@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<!--
+  Sitio de una sola pagina: el unico recurso indexable es la home.
+  Las secciones (#services, #about, #contact) son anclas, no URLs, y por eso
+  no van aqui — Google descarta los fragmentos.
+
+  Sin alternates hreflang: el selector de idioma cambia el contenido por JS
+  pero no la URL, asi que no hay una URL distinta por idioma que declarar.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.wmaritimes.com/</loc>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.wmaritimes.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.wmaritimes.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wmaritimes.com/"/>
   </url>
 </urlset>
